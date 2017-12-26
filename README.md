@@ -1,4 +1,6 @@
 # arduino-maxtrix-bluetooth
+
+
 Controlling MAX7219 matrix bar with bluetooth module HC-06.
 Maybe RTC module for time/date control by I2C or extracting from telephone by bluetooth connection.
 
