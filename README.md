@@ -13,7 +13,7 @@ A Tx1(18) > 4k7 -10k divider > Rx HC-06
 
 A Rx1(19) >                    Tx HC-06
 
-With arduino Uno  using Hardware serial on combined port or Software Serial .
+With arduino Uno  using Software Serial .
 
 Goal is : bluetooth control for :
 Brightness / scrolling speed / On Off / time display / countdown for event / adding and deleting message in message array. Some with time component in them.
