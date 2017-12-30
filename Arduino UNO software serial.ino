@@ -174,6 +174,8 @@ void loop()
 { 
  #if DEBUG  readSerial(); #endif
   readBT() ;
-  scrollText();
+ if (scrollDelay == 255 ) { stillText(); }
+ else {  scrollText(); }
+ 
  
  }
