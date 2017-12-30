@@ -1,6 +1,5 @@
 // Use the MD_MAX72XX library to scroll text on the display
-// enter text on the serial monitor 
-// Speed for the display is controlled by a pot on SPEED_IN analog in.
+// enter text on the serial monitor or BLUETOOTH MODULE
 
 #include <MD_MAX72xx.h>
 #include <SoftwareSerial.h>
