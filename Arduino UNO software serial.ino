@@ -78,7 +78,8 @@ void readSerial(void)
 void readBT(void)
 {  static uint8_t	putIndex = 0;
   while (BT.available())  {
-    newMessage[putIndex] = (char)BT.read();    Serial.write(newMessage[putIndex]);
+    newMessage[putIndex] = (char)BT.read();  
+   #if DEBUG Serial.write(newMessage[putIndex]); #endif
     if ( (newMessage[putIndex] == '\n')  ||(putIndex >= BUF_SIZE-3)) 
       { for (int tel = 0; tel < END_SPACING; tel++) {  newMessage[putIndex++] = ' '; }	
       newMessage[putIndex] = '\0';      putIndex = 0;   
@@ -159,15 +160,19 @@ void setup()
   
    strcpy(curMessage, "Bt text + newline        ");
   newMessage[0] = '\0';
+BT.begin(9600);
 
+#if DEBUG  
   Serial.begin(9600);
-  BT.begin(9600);
   Serial.println("Message Display , End message line with a newline");
+#endif 
+ 
  delay(500);
 }
 
 void loop() 
-{ readSerial(); 
+{ 
+ #if DEBUG  readSerial(); #endif
   readBT() ;
   scrollText();
  
